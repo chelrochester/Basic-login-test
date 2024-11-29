@@ -17,7 +17,13 @@ export class LoginPage {
         await this.page.goto(this.url);
     }
 
-    public async login(user, password) {
+    
+    public async login() {
+        const user = process.env.USER as string;
+        const password = process.env.PASSWORD as string;
+
+
+
         await this.page.locator('[data-qa="login-email"]').fill(user);
         await this.page.locator('[data-qa="login-password"]').fill(password);
         await this.page.locator('[data-qa="login-button"]').click();
