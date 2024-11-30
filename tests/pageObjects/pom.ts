@@ -27,5 +27,6 @@ export class LoginPage {
         await this.page.locator('[data-qa="login-email"]').fill(user);
         await this.page.locator('[data-qa="login-password"]').fill(password);
         await this.page.locator('[data-qa="login-button"]').click();
+        await this.page.waitForNavigation();
     }
 }
