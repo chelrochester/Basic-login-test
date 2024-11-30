@@ -10,7 +10,6 @@ test("log into automationexercise", async ({
 }) => {
     await loginPage.goto();
     await loginPage.login(user, password);
-    await this.page.waitForNavigation();
 
     const logoutButton = page.locator('text=" Logout"');
     await expect(logoutButton).toBeVisible({ timeout: 15000 });
